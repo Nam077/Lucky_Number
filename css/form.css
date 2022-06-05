@@ -1,0 +1,222 @@
+                         :root {
+                            --body_gradient_left: #7200D0;
+                            --body_gradient_right: #C800C1;
+                            --input_hover: #990000;
+                            --submit_bg: #1FCC44;
+                            --submit_hover: #40e263;
+                            --icon_color: #6b6b6b;
+                        }
+                        
+                        #form_wrapper {
+                            width: 80%;
+                            height: 500px;
+                            /* this will help us center it*/
+                            margin: auto;
+                            background-color: white;
+                            border-radius: 50px;
+                            /* make it a grid container*/
+                            display: grid;
+                            /* with two columns of same width*/
+                            grid-template-columns: 1fr 1fr;
+                            /* with a small gap in between them*/
+                            grid-gap: 5vw;
+                            /* add some padding around */
+                            padding: 5vh 15px;
+                        }
+                        
+                        #form_left {
+                            /* center the image */
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+                        
+                        #form_left img {
+                            width: 600px;
+                        }
+                        
+                        #form_right {
+                            display: grid;
+                            /* single column layout */
+                            grid-template-columns: 1.5fr;
+                            /* have some gap in between elements*/
+                            grid-gap: 20px;
+                            padding: 20% 5%;
+                        }
+                        
+                        .input_container {
+                            background-color: var(--input_bg);
+                            /* vertically align icon and text inside the div*/
+                            display: flex;
+                            align-items: center;
+                            padding-left: 20px;
+                        }
+                        
+                        .input_container:hover {
+                            background-color: var(--input_hover);
+                        }
+                        
+                        .input_container,
+                        #input_submit {
+                            height: 60px;
+                            /* make the borders more round */
+                            border-radius: 30px;
+                            width: 100%;
+                        }
+                        
+                        .input_field {
+                            /* customize the input tag with lighter font and some padding*/
+                            color: var(--icon_color);
+                            background-color: inherit;
+                            width: 90%;
+                            border: none;
+                            font-size: 10xp;
+                            font-weight: 400;
+                            padding-left: 30px;
+                        }
+                        
+                        .input_field:hover,
+                        .input_field:focus {
+                            /* remove the outline */
+                            outline: none;
+                        }
+                        
+                        #input_submit {
+                            /* submit button has a different color and different padding */
+                            background-color: var(--submit_bg);
+                            padding-left: 0;
+                            font-weight: bold;
+                            color: white;
+                            text-transform: uppercase;
+                        }
+                        
+                        #input_submit:hover {
+                            background-color: var(--submit_hover);
+                            /* simple color transition on hover */
+                            transition: background-color, 1s;
+                            cursor: pointer;
+                        }
+                        
+                        h1,
+                        span {
+                            text-align: center;
+                        }
+                        /* shift it a bit lower */
+                        
+                        #create_account {
+                            display: block;
+                            position: relative;
+                            top: 30px;
+                        }
+                        
+                        a {
+                            /* remove default underline */
+                            text-decoration: none;
+                            color: var(--submit_bg);
+                            font-weight: bold;
+                        }
+                        
+                        a:hover {
+                            color: var(--submit_hover);
+                        }
+                        
+                        i {
+                            color: var(--icon_color);
+                        }
+                        /* make it responsive */
+                        
+                        @media screen and (max-width:768px) {
+                            /* make the layout  a single column and add some margin to the wrapper */
+                            #form_wrapper {
+                                grid-template-columns: 1fr;
+                                margin-left: 10px;
+                                margin-right: 10px;
+                            }
+                            /* on small screen we don't display the image */
+                            #form_left {
+                                display: none;
+                            }
+                        }
+                        
+                        .span {
+                            font-size: 20px;
+                        }
+                        
+                        .text-box {
+                            margin-left: 44vw;
+                            margin-top: 42vh;
+                        }
+                        
+                        .btn:link,
+                        .btn:visited {
+                            text-transform: uppercase;
+                            text-decoration: none;
+                            padding: 40px 80px;
+                            display: inline-block;
+                            border-radius: 100px;
+                            transition: all .2s;
+                            position: absolute;
+                        }
+                        
+                        .btn:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                        }
+                        
+                        .btn:active {
+                            transform: translateY(-1px);
+                            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                        }
+                        
+                        .btn-white {
+                            background-color: rgb(107, 3, 3);
+                            color: #777;
+                        }
+                        
+                        .btn::after {
+                            content: "";
+                            display: inline-block;
+                            height: 100%;
+                            width: 100%;
+                            border-radius: 100px;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                            transition: all .4s;
+                        }
+                        
+                        .btn-white::after {
+                            background-color: rgb(107, 3, 3);
+                        }
+                        
+                        .btn:hover::after {
+                            transform: scaleX(1.4) scaleY(1.6);
+                            opacity: 0;
+                        }
+                        
+                        .btn-animated {
+                            animation: moveInBottom 5s ease-out;
+                            animation-fill-mode: backwards;
+                        }
+                        
+                        @keyframes moveInBottom {
+                            0% {
+                                opacity: 0;
+                                transform: translateY(30px);
+                            }
+                            100% {
+                                opacity: 1;
+                                transform: translateY(0px);
+                            }
+                        }
+                        
+                        .btn {
+                            padding: 20px;
+                        }
+                        
+                        .form_wrapper2 {
+                            width: 1000px;
+                            height: 500px;
+                            background-color: #1FCC44;
+                        }
